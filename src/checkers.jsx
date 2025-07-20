@@ -1,3 +1,10 @@
-import { useState } from 'react'
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import CheckersGame from './checkersGame.jsx'
 
-import './checkers.css'
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <CheckersGame />
+  </StrictMode>,
+)
