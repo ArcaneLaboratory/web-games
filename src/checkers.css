@@ -1,1 +1,75 @@
 @import url(./index.css);
+
+.board{
+    display: grid;
+    grid-template-rows: repeat(8, 80px);
+    grid-template-columns: repeat(8, 80px);
+    justify-content: center;
+    padding: 10%;
+}
+.checker{
+    z-index: 1;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 3px inset white;
+    margin: 15px;
+}
+.square{
+    width: 80px;
+    height: 80px;
+}
+.black{
+    background-color: black;
+}
+.red{
+    background-color: red;
+}
+.x0{
+    grid-column: 1/2;
+}
+.x1{
+    grid-column: 2/3;
+}
+.x2{
+    grid-column: 3/4;
+}
+.x3{
+    grid-column: 4/5;
+}
+.x4{
+    grid-column: 5/6;
+}
+.x5{
+    grid-column: 6/7;
+}
+.x6{
+    grid-column: 7/8;
+}
+.x7{
+    grid-column: 8/9;
+}
+.y1{
+    grid-row: 1/2;
+}
+.y2{
+    grid-row: 2/3;
+}
+.y3{
+    grid-row: 3/4;
+}
+.y4{
+    grid-row: 4/5;
+}
+.y5{
+    grid-row: 5/6;
+}
+.y6{
+    grid-row: 6/7;
+}
+.y7{
+    grid-row: 7/8;
+}
+.y8{
+    grid-row: 8/9;
+}
