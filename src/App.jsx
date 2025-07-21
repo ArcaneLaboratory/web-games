@@ -1,6 +1,6 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import checkersLogo from "./assets/Checkers.png";
 import siteLogo from "./assets/arcanelab32.png"
 import "./index.css";
 
@@ -43,7 +43,7 @@ function MainApp() {
         <div class="gamecontainer">
           <h2>Checkers</h2>
           <a href="checkers.html">
-            <img className="gamePreview" src={siteLogo} alt="Game Preview"  />
+            <img className="gamePreview" src={checkersLogo} alt="Game Preview"  />
           </a>
         </div>
         <div class="gamecontainer">

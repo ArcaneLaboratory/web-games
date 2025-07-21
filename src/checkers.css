@@ -42,7 +42,7 @@
   z-index: 2;
 }
 
-.checker.x-1 {
+.checker.x-1, .checker.y0{
   display: none;
 }
 

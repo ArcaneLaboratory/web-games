@@ -3,6 +3,7 @@
   );
 
 :root {
+
   /* change the values below to your colors from your palette */
   --background-color: #1b1c2d;
   --primary-color: #00eef9;
@@ -39,6 +40,7 @@ body {
   max-width: 1280px;
   margin: 0 auto;
   text-align: center;
+    box-sizing: border-box;
 }
 
 h1, h2, h3{
@@ -46,10 +48,18 @@ h1, h2, h3{
   color: var(--headline-color-on-color)
 }
 
-.flexcontainer{
+#flexcontainer{
   display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
-.img{
+.gamecontainer{
+  width: 30%;
+  border: 3px solid var(--secondary-color);
+  border-radius: 2%;
+}
+
+img{
   width: 100%;
 }

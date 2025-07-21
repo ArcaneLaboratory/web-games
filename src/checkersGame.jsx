@@ -13,7 +13,7 @@ function redOrBlack(value) {
 
 function Square({ value, cls }) {
     return (
-        <div className={"square " + redOrBlack(value) + " " + cls}>{value}</div>
+        <div className={"square " + redOrBlack(value) + " " + cls}></div>
     );
 }
 
@@ -74,9 +74,9 @@ function Board() {
     };
     function blackCapture(selectedChecker) {
         let captures = redCheckers.filter((f) => {
-            if(f[1] == selectedChecker[1] && f[4] == selectedChecker[4]){
+            if (f[1] == selectedChecker[1] && f[4] == selectedChecker[4]) {
                 return true;
-            }else{
+            } else {
                 return false;
             }
         })
@@ -87,9 +87,9 @@ function Board() {
     }
     function redCapture(selectedChecker) {
         let captures = blackCheckers.filter((f) => {
-            if(f[1] == selectedChecker[1] && f[4] == selectedChecker[4]){
+            if (f[1] == selectedChecker[1] && f[4] == selectedChecker[4]) {
                 return true;
-            }else{
+            } else {
                 return false;
             }
         })
@@ -115,9 +115,12 @@ function Board() {
                             " y" +
                             String(Number(redCheckers[i][4]) - 2)
                             ;
-                            if(blackCapture(validMoves[0]) || redCapture(validMoves[0])){
-                            validMoves[1] = "x9"
+                        if (blackCapture(validMoves[0]) || redCapture(validMoves[0])) {
+                            validMoves[0] = "x9"
                         }
+                    }
+                    else if (blackCapture(validMoves[0])) {
+                        validMoves[0] = "x9"
                     }
                     validMoves[1] =
                         "x" +
@@ -132,9 +135,12 @@ function Board() {
                             " y" +
                             String(Number(redCheckers[i][4]) - 2)
                             ;
-                            if(blackCapture(validMoves[1]) || redCapture(validMoves[1])){
+                        if (blackCapture(validMoves[1]) || redCapture(validMoves[1])) {
                             validMoves[1] = "x9"
                         }
+                    }
+                    else if (blackCapture(validMoves[1])) {
+                        validMoves[1] = "x9"
                     }
                     if (redCheckers[i][6] == "k") {
                         validMoves[2] =
@@ -150,9 +156,12 @@ function Board() {
                                 " y" +
                                 String(Number(redCheckers[i][4]) + 2)
                                 ;
-                                if(blackCapture(validMoves[2]) || redCapture(validMoves[2])){
-                            validMoves[1] = "x9"
+                            if (blackCapture(validMoves[2]) || redCapture(validMoves[2])) {
+                                validMoves[2] = "x9"
+                            }
                         }
+                        else if (blackCapture(validMoves[2])) {
+                            validMoves[2] = "x9"
                         }
                         validMoves[3] =
                             "x" +
@@ -160,21 +169,21 @@ function Board() {
                             " y" +
                             String(Number(redCheckers[i][4]) + 1)
                             ;
-                        if (redCapture(validMoves[1])) {
+                        if (redCapture(validMoves[3])) {
                             validMoves[3] =
                                 "x" +
                                 String(Number(redCheckers[i][1]) + 2) +
                                 " y" +
                                 String(Number(redCheckers[i][4]) + 2)
                                 ;
-                                if(blackCapture(validMoves[3]) || redCapture(validMoves[3])){
-                            validMoves[1] = "x9"
+                            if (blackCapture(validMoves[3]) || redCapture(validMoves[3])) {
+                                validMoves[3] = "x9"
+                            }
                         }
+                        else if (blackCapture(validMoves[3])) {
+                            validMoves[3] = "x9"
                         }
                     }
-                    validMoves.forEach((e) => {
-
-                    })
                 }
                 if (cc == "black") {
                     validMoves[0] =
@@ -184,15 +193,18 @@ function Board() {
                         String(Number(blackCheckers[i][4]) + 1)
                         ;
                     if (blackCapture(validMoves[0])) {
-                         validMoves[0] =
+                        validMoves[0] =
                             "x" +
                             String(Number(blackCheckers[i][1]) - 2) +
                             " y" +
                             String(Number(blackCheckers[i][4]) + 2)
                             ;
-                        if(blackCapture(validMoves[0]) || redCapture(validMoves[0])){
-                           validMoves[0] = "x9"
+                        if (blackCapture(validMoves[0]) || redCapture(validMoves[0])) {
+                            validMoves[0] = "x9"
                         }
+                    }
+                    else if (redCapture(validMoves[0])) {
+                        validMoves[0] = "x9"
                     }
                     validMoves[1] =
                         "x" +
@@ -207,9 +219,12 @@ function Board() {
                             " y" +
                             String(Number(blackCheckers[i][4]) + 2)
                             ;
-                        if(blackCapture(validMoves[1]) || redCapture(validMoves[1])){
+                        if (blackCapture(validMoves[1]) || redCapture(validMoves[1])) {
                             validMoves[1] = "x9"
                         }
+                    }
+                    else if (redCapture(validMoves[1])) {
+                        validMoves[1] = "x9"
                     }
                     if (blackCheckers[i][6] == "k") {
                         validMoves[2] =
@@ -225,9 +240,12 @@ function Board() {
                                 " y" +
                                 String(Number(blackCheckers[i][4]) - 2)
                                 ;
-                                if(blackCapture(validMoves[2]) || redCapture(validMoves[2])){
-                            validMoves[1] = "x9"
+                            if (blackCapture(validMoves[2]) || redCapture(validMoves[2])) {
+                                validMoves[2] = "x9"
+                            }
                         }
+                        else if (redCapture(validMoves[2])) {
+                            validMoves[2] = "x9"
                         }
                         validMoves[3] =
                             "x" +
@@ -242,9 +260,12 @@ function Board() {
                                 " y" +
                                 String(Number(blackCheckers[i][4]) - 2)
                                 ;
-                                if(blackCapture(validMoves[3]) || redCapture(validMoves[3])){
-                            validMoves[1] = "x9"
+                            if (blackCapture(validMoves[3]) || redCapture(validMoves[3])) {
+                                validMoves[3] = "x9"
+                            }
                         }
+                        else if (redCapture(validMoves[3])) {
+                            validMoves[3] = "x9"
                         }
                     }
                 }
@@ -260,22 +281,37 @@ function Board() {
             console.log(freakingCheckerSelected);
             if (cc == "empty") {
                 if (freakingCheckerSelected[0] == "red") {
-                    if (freakingCheckerSelected[0] == "black") {
-                        let isKing = redCheckers[freakingCheckerSelected[1]][6] == "k"
-                        redCheckers[freakingCheckerSelected[1]] = validMoves[i] + " ";
-                        redCheckers[freakingCheckerSelected[1]] += ((redCheckers[freakingCheckerSelected[1]][4] == "8") || isKing ? "k" : "r")
-                        // console.log(redCheckers[freakingCheckerSelected[1]])
-                        // console.log("reached")
+                    let isKing = redCheckers[freakingCheckerSelected[1]][6] == "k"
+                    if (Math.abs(Number(validMoves[i][4]) - Number(redCheckers[freakingCheckerSelected[1]][4])) == 2) { // trying to capture
+                        blackCheckers[blackCheckers.findIndex((e) => {
+                            if (Math.floor((Number(validMoves[i][4]) + Number(redCheckers[freakingCheckerSelected[1]][4])) / 2) == e[4] &&
+                                Math.floor((Number(validMoves[i][1]) + Number(redCheckers[freakingCheckerSelected[1]][1])) / 2) == e[1]) {
+                                return true;
+                                // found captured checker
+                            }
+                            return false;
+                        })] = "x9" // remove captured checker
                     }
-                }
-                if (freakingCheckerSelected[0] == "black") {
-                    let isKing = blackCheckers[freakingCheckerSelected[1]][6] == "k"
-                    blackCheckers[freakingCheckerSelected[1]] = validMoves[i] + " ";
-                    blackCheckers[freakingCheckerSelected[1]] += ((blackCheckers[freakingCheckerSelected[1]][4] == "8") || isKing ? "k" : "r")
-                    // console.log(blackCheckers[freakingCheckerSelected[1]])
-                    // console.log("reached")
+                    redCheckers[freakingCheckerSelected[1]] = validMoves[i] + " ";
+                    redCheckers[freakingCheckerSelected[1]] += ((redCheckers[freakingCheckerSelected[1]][4] == "1") || isKing ? "k" : "r") // move the checker and check for promotion
                 }
 
+                if (freakingCheckerSelected[0] == "black") {
+                    let isKing = blackCheckers[freakingCheckerSelected[1]][6] == "k"
+                    if (Math.abs(Number(validMoves[i][4]) - Number(blackCheckers[freakingCheckerSelected[1]][4])) == 2) { // trying to capture
+                        redCheckers[redCheckers.findIndex((e) => {
+                            if (Math.floor((Number(validMoves[i][4]) + Number(blackCheckers[freakingCheckerSelected[1]][4])) / 2) == e[4] &&
+                                Math.floor((Number(validMoves[i][1]) + Number(blackCheckers[freakingCheckerSelected[1]][1])) / 2) == e[1]) {
+                                return true;
+                                // found captured checker
+                            }
+                            return false;
+                        })] = "x9" // remove captured checker
+                    }
+                    blackCheckers[freakingCheckerSelected[1]] = validMoves[i] + " ";
+                    blackCheckers[freakingCheckerSelected[1]] += ((blackCheckers[freakingCheckerSelected[1]][4] == "8") || isKing ? "k" : "r") // move the checker and check for promotion
+                }
+                whoseFreakingTurnIsIt = (whoseFreakingTurnIsIt == "black") ? "red" : "black"
             }
             validMoves = ["x9", "x9", "x9", "x9"];
             freakingCheckerSelected = null;
@@ -285,6 +321,7 @@ function Board() {
 
     return (
         <>
+            <h2>It is {whoseFreakingTurnIsIt}'s turn</h2>
             <div className={"board"}>
                 <Column rowvalue={0}></Column>
                 <Column rowvalue={1}></Column>
