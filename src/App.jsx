@@ -1,16 +1,22 @@
+import {StrictMode} from "react";
 import ReactDOM from "react-dom/client";
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
-import reactLogo from "./assets/react.svg";
+import {Link} from "react-router-dom"
 import checkersLogo from "./assets/Checkers.png";
 import siteLogo from "./assets/arcanelab32.png"
 import "./index.css";
 import CheckersGame from "./checkersGame.jsx";
 
 const router = createBrowserRouter([
-  {path: "/", element: <MainApp />},
-  {path: "/checkers", element: <CheckersGame />}
+  {path: "/web-games", element: <MainApp />},
+  {path: "/web-games/checkers", element: <CheckersGame />}
 ])
 
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<StrictMode>
+    <RouterProvider router={router} />
+  </StrictMode>
+)
 // function App() {
 //   const [count, setCount] = useState(0);
 
@@ -49,7 +55,7 @@ function MainApp() {
       <main id="flexcontainer">
         <div class="gamecontainer">
           <h2>Checkers</h2>
-          <Link to="/checkers">
+          <Link to="/web-games/checkers">
             <img className="gamePreview" src={checkersLogo} alt="Game Preview"  />
           </Link>
         </div>
