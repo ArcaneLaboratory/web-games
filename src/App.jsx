@@ -42,7 +42,7 @@ function MainApp() {
       <main id="flexcontainer">
         <div class="gamecontainer">
           <h2>Checkers</h2>
-          <a href="https://arcanelaboratory.github.io/checkers.html">
+          <a href="https://arcanelaboratory.github.io/web-games/checkers.html">
             <img className="gamePreview" src={checkersLogo} alt="Game Preview"  />
           </a>
         </div>
