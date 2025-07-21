@@ -4,7 +4,7 @@ import reactLogo from "./assets/react.svg";
 import checkersLogo from "./assets/Checkers.png";
 import siteLogo from "./assets/arcanelab32.png"
 import "./index.css";
-import Checkers from "checkersGame.jsx";
+import CheckersGame from "./checkersGame.jsx";
 
 const router = createBrowserRouter([
   {path: "/", element: <MainApp />},
