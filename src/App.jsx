@@ -1,8 +1,15 @@
-import { useState } from "react";
+import ReactDOM from "react-dom/client";
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import reactLogo from "./assets/react.svg";
 import checkersLogo from "./assets/Checkers.png";
 import siteLogo from "./assets/arcanelab32.png"
 import "./index.css";
+import Checkers from "checkersGame.jsx";
+
+const router = createBrowserRouter([
+  {path: "/", element: <MainApp />},
+  {path: "/checkers", element: <CheckersGame />}
+])
 
 // function App() {
 //   const [count, setCount] = useState(0);
@@ -42,9 +49,9 @@ function MainApp() {
       <main id="flexcontainer">
         <div class="gamecontainer">
           <h2>Checkers</h2>
-          <a href="https://arcanelaboratory.github.io/web-games/checkers.html">
+          <Link to="/checkers">
             <img className="gamePreview" src={checkersLogo} alt="Game Preview"  />
-          </a>
+          </Link>
         </div>
         <div class="gamecontainer">
           <h2>Coming Soon</h2>
